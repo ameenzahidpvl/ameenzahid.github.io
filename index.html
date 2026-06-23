@@ -3,163 +3,172 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ameen Zahid Portfolio</title>
+<title>Ameen Zahid | Portfolio</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 html{scroll-behavior:smooth}
-body{background:#0b0b0f;color:white;line-height:1.7}
-a{color:white;text-decoration:none} 
-  
+body{background:#050509;color:white;line-height:1.7}
+a{text-decoration:none;color:white}
 
-header{
+nav{
+position:fixed;top:0;left:0;width:100%;
+padding:18px 8%;
+display:flex;justify-content:space-between;align-items:center;
+background:rgba(5,5,9,.75);
+backdrop-filter:blur(18px);
+z-index:999;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+.logo{font-weight:900}
+nav ul{display:flex;gap:28px;list-style:none}
+nav a{font-weight:bold;color:#ccc}
+nav a:hover{color:white}
+
+.hero{
 min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:30px;
-background:radial-gradient(circle at top,#272744,#0b0b0f 55%);
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+text-align:center;padding:120px 8% 70px;
+background:radial-gradient(circle at top,#22223f,#050509 60%);
 }
-
 .profile{
-width:180px;
-height:180px;
-border-radius:50%;
-object-fit:cover;
-border:4px solid white;
-margin-bottom:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.4);
+width:180px;height:180px;border-radius:50%;
+object-fit:cover;border:4px solid white;
+box-shadow:0 30px 70px rgba(0,0,0,.6);
+margin-bottom:28px;
 }
+.hero h1{font-size:76px;line-height:1.1}
+.hero h2{font-size:25px;color:#cfcfcf;margin:18px 0}
+.hero p{max-width:780px;color:#ddd;font-size:18px}
 
-header h1{font-size:64px;margin-bottom:10px}
-header h2{font-size:24px;color:#bbb;margin-bottom:20px}
-header p{max-width:720px;color:#ccc;font-size:18px}
-
-.btns{margin-top:30px;display:flex;gap:15px;flex-wrap:wrap;justify-content:center}
+.btns{display:flex;gap:15px;flex-wrap:wrap;justify-content:center;margin-top:30px}
 .btn{
-padding:13px 26px;
-border-radius:40px;
-background:white;
-color:black;
-font-weight:bold;
+padding:14px 28px;border-radius:50px;
+font-weight:900;background:white;color:black;
 }
-.btn.dark{
-background:#1f1f29;
-color:white;
-border:1px solid #333;
-}
+.btn.dark{background:#171722;color:white;border:1px solid #333}
+.btn.green{background:#25D366;color:white}
 
-section{padding:80px 10%}
-.section-title{font-size:42px;margin-bottom:35px}
-.about{max-width:900px;color:#ccc;font-size:18px}
+section{padding:90px 8%}
+.section-title{font-size:48px;margin-bottom:22px}
+.sub{color:#aaa;max-width:850px;margin-bottom:40px}
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:22px;
+gap:25px;
 }
-
 .card{
-background:#171720;
-padding:28px;
-border-radius:18px;
-border:1px solid #252532;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.12);
+border-radius:26px;
+padding:30px;
 transition:.3s;
+backdrop-filter:blur(14px);
 }
-.card:hover{transform:translateY(-6px);border-color:#555}
-.card img{width:100%;border-radius:14px;margin-bottom:15px}
-.card h3{font-size:23px;margin-bottom:12px}
+.card:hover{transform:translateY(-8px);background:rgba(255,255,255,.09)}
+.card img{width:100%;border-radius:18px;margin-bottom:18px}
+.card h3{font-size:25px;margin-bottom:10px}
 .card p{color:#bbb}
 
-.skills{display:flex;flex-wrap:wrap;gap:12px}
+.stats h3{font-size:46px;color:#25D366}
+
+.skills{display:flex;flex-wrap:wrap;gap:13px}
 .skill{
-background:#181820;
-border:1px solid #2b2b36;
-padding:11px 17px;
-border-radius:30px;
-color:#ddd;
+padding:13px 20px;border-radius:40px;
+background:#15151f;border:1px solid #333;color:#ddd;
 }
 
+.brands-logos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:40px;
+}
+.brands-logos img{
+width:100%;height:135px;object-fit:contain;
+background:white;padding:22px;border-radius:22px;
+transition:.3s;
+}
+.brands-logos img:hover{transform:translateY(-8px)}
+
 .contact-box{
-background:#171720;
-padding:30px;
-border-radius:20px;
-border:1px solid #252532;
-max-width:700px;
+max-width:800px;background:#15151f;
+border:1px solid #29293a;border-radius:25px;
+padding:35px;
 }
 .contact-box p{margin-bottom:12px;color:#ccc}
 
-footer{
-text-align:center;
-padding:35px;
-border-top:1px solid #222;
-color:#888;
-}
-
 .whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-color:white;
-padding:14px 20px;
-border-radius:40px;
-font-weight:bold;
+position:fixed;right:20px;bottom:20px;
+background:#25D366;color:white;
+padding:15px 24px;border-radius:50px;
+font-weight:900;z-index:1000;
 }
 
-@media(max-width:600px){
-header h1{font-size:42px}
-header h2{font-size:19px}
-.section-title{font-size:32px}
-section{padding:60px 7%}
-.profile{width:140px;height:140px}
+footer{
+text-align:center;padding:35px;
+border-top:1px solid #222;color:#888;
+}
+
+@media(max-width:700px){
+nav{flex-direction:column;gap:12px}
+nav ul{gap:15px;font-size:14px}
+.hero h1{font-size:45px}
+.hero h2{font-size:19px}
+.profile{width:145px;height:145px}
+.section-title{font-size:34px}
+section{padding:65px 7%}
 }
 </style>
 </head>
 
 <body>
+
 <nav>
+<div class="logo">Ameen Zahid</div>
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#brands">Brands</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
-<header>
+
+<header class="hero">
 <img src="file%20copy.jpg" class="profile" alt="Ameen Zahid">
 
 <h1>Ameen Zahid</h1>
 <h2>Graphic Designer • Video Editor • AI Content Creator</h2>
 
 <p>
-I create impactful visuals, cinematic product videos, AI-powered commercials,
+I create premium visuals, cinematic product videos, AI-powered commercials,
 social media designs, e-commerce content and brand marketing visuals.
 </p>
 
 <div class="btns">
 <a class="btn" href="#portfolio">View Portfolio</a>
-<a class="btn dark" href="https://wa.me/971558656147">WhatsApp UAE</a>
-<a class="btn dark" href="https://wa.me/919633898547">WhatsApp India</a>
+<a class="btn dark" href="https://www.linkedin.com/in/ameen-zahid-povval/" target="_blank">LinkedIn</a>
+<a class="btn dark" href="https://www.behance.net/ameenpovval" target="_blank">Behance</a>
+<a class="btn dark" href="https://www.instagram.com/ameenuu___/" target="_blank">Instagram</a>
 </div>
 </header>
 
 <section id="about">
 <h2 class="section-title">About Me</h2>
-<p class="about">
+<p class="sub">
 I am a Multimedia Designer based in the UAE with 4+ years of experience in
 Graphic Design, Video Editing, Motion Graphics, Product Photography and AI Content Creation.
-Currently, I work as a Multimedia Designer at Toby's Professional, creating product visuals,
-advertisements, social media content, Amazon listing images, website banners and AI-powered
-marketing content.
+I create product visuals, advertisements, social media campaigns, Amazon listing images,
+website banners and AI-powered marketing content.
 </p>
 </section>
 
-<section>
+<section class="stats">
 <div class="grid">
 <div class="card"><h3>4+</h3><p>Years Experience</p></div>
-<div class="card"><h3>100+</h3><p>Projects Completed</p></div>
+<div class="card"><h3>250+</h3><p>Projects Completed</p></div>
+<div class="card"><h3>9+</h3><p>Brands Worked With</p></div>
 <div class="card"><h3>50+</h3><p>AI Commercials Created</p></div>
 </div>
 </section>
@@ -179,65 +188,91 @@ marketing content.
 <div class="skill">Motion Graphics</div>
 <div class="skill">Social Media Design</div>
 <div class="skill">E-commerce Product Imaging</div>
+<div class="skill">Marketing Design</div>
+</div>
+</section>
+
+<section id="brands">
+<h2 class="section-title">Trusted By Leading Brands & Organizations</h2>
+<p class="sub">
+From healthcare and education to retail and e-commerce, I have helped brands create impactful
+visual communication through graphic design, video production, product photography and AI-powered marketing content.
+</p>
+
+<div class="brands-logos">
+<img src="akkara.png" alt="Akkara Foundation">
+<img src="alhayath.png" alt="Al Hayath">
+<img src="dialife.jpeg" alt="Dialife">
+<img src="hnc.png" alt="HNC Hospital">
+<img src="malikdeenar.png" alt="Malik Deenar College">
+<img src="moda.png" alt="Moda Matching Centre">
 </div>
 </section>
 
 <section id="portfolio">
 <h2 class="section-title">Portfolio</h2>
+<p class="sub">Selected work across graphic design, video editing, AI commercials and product photography.</p>
 
 <div class="grid">
+
 <div class="card">
 <img src="posterss.jpg" alt="Graphic Design Work">
 <h3>Graphic Design</h3>
-<p>Social media posts, posters, banners, marketing materials, product ads and e-commerce creatives.</p>
+<p>Social media posts, posters, banners, product ads and e-commerce creatives.</p>
 </div>
 
 <div class="card">
 <h3>Video Editing</h3>
-<p>Commercial videos, reels, promotional content, product videos, motion graphics and corporate edits.</p>
+<p>Commercial videos, reels, product videos, corporate edits and motion graphics.</p>
 </div>
 
 <div class="card">
 <h3>AI Commercials</h3>
-<p>AI-generated product advertisements, cinematic product reveals and visual storytelling projects.</p>
+<p>AI-generated product advertisements, cinematic product reveals and visual storytelling.</p>
 </div>
 
 <div class="card">
 <h3>Product Photography</h3>
-<p>Studio product photography, Amazon-ready images, e-commerce visuals and lifestyle product shots.</p>
+<p>Studio product photography, Amazon-ready images, e-commerce visuals and lifestyle shots.</p>
 </div>
+
 </div>
 </section>
 
 <section>
 <h2 class="section-title">Experience</h2>
 <div class="grid">
-<div class="card"><h3>Toby's Professional</h3><p>Multimedia Designer — Dubai, UAE</p></div>
-<div class="card"><h3>Impress</h3><p>Senior Graphic Designer — India</p></div>
-<div class="card"><h3>Akkara Foundation</h3><p>Videographer & Graphic Designer — India</p></div>
+<div class="card">
+<h3>Toby's Professional</h3>
+<p>Multimedia Designer — Dubai, UAE</p>
 </div>
-</section>
 
-<section>
-<h2 class="section-title">Connect With Me</h2>
-<div class="btns">
-<a class="btn dark" href="#">LinkedIn</a>
-<a class="btn dark" href="#">Behance</a>
-<a class="btn dark" href="#">Instagram</a>
-<a class="btn dark" href="#">YouTube</a>
+<div class="card">
+<h3>Impress</h3>
+<p>Senior Graphic Designer — India</p>
+</div>
+
+<div class="card">
+<h3>Akkara Foundation</h3>
+<p>Videographer & Graphic Designer — India</p>
+</div>
 </div>
 </section>
 
 <section id="contact">
 <h2 class="section-title">Contact</h2>
+
 <div class="contact-box">
 <p><strong>Email:</strong> ameenzahidpvl@gmail.com</p>
-<p><strong>WhatsApp UAE:</strong> <a href="https://wa.me/971558656147">+971 55 865 6147</a></p>
-<p><strong>WhatsApp India:</strong> <a href="https://wa.me/919633898547">+91 96338 98547</a></p>
+<p><strong>WhatsApp UAE:</strong> <a href="https://wa.me/971558656147" target="_blank">+971 55 865 6147</a></p>
+<p><strong>WhatsApp India:</strong> <a href="https://wa.me/919633898547" target="_blank">+91 96338 98547</a></p>
+<p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ameen-zahid-povval/" target="_blank">Ameen Zahid Povval</a></p>
+<p><strong>Behance:</strong> <a href="https://www.behance.net/ameenpovval" target="_blank">ameenpovval</a></p>
+<p><strong>Instagram:</strong> <a href="https://www.instagram.com/ameenuu___/" target="_blank">@ameenuu___</a></p>
 </div>
 </section>
 
-<a class="whatsapp" href="https://wa.me/971558656147">WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/971558656147" target="_blank">WhatsApp</a>
 
 <footer>
 <p>Designed & Developed by Ameen Zahid</p>
