@@ -367,7 +367,7 @@ visual communication through graphic design, video production, product photograp
 <p>Commercial videos, reels, product videos, corporate edits and motion graphics.</p>
 </div>
 
-<div class="card">
+<div class="card portfolio-click" onclick="openAIShowcase()">
 <h3>AI Commercials</h3>
 <p>AI-generated product advertisements, cinematic product reveals and visual storytelling.</p>
 </div>
@@ -527,7 +527,62 @@ document.getElementById("videoShowcase").classList.remove("active");
 document.body.style.overflow="auto";
 }
 </script>
+<!-- AI PRODUCTS SHOWCASE START -->
 
+<div id="aiShowcase" class="showcase">
+
+<button class="close-showcase" onclick="closeAIShowcase()">×</button>
+
+<h2>AI Product Commercials</h2>
+
+<p>
+AI-generated product advertisements, cinematic product reveals, AI commercials and product storytelling.
+</p>
+
+<div class="video-gallery">
+
+<iframe src="https://www.youtube.com/embed/TqcXf2Mfyvw" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/9L-As8ag5yg" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/jO-XNzL_1R8" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/hemXC6LXRLg" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/0gHF63XZbcY" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/6gfFdMmsO4M" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/GF7UwwnWXLc" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/QhA5krxFP2s" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/76OzuSBaDAo" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/WsmJbdo3Kn8" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/NOYOvMqO758" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/fqo5BFDkXkk" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/b373BPIkAQ0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/iHtVHK_licY" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/9F1kJnuluME" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/aQEA2udwx2A" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/4Iq9W_zwoFg" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/9LPDmpTPLD0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/g5sx1IQveag" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/NkMroF6as0M" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/e_jsOrX1BY8" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/qbaSvSX6uVs" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/Xn7B7IWKDH4" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/5x8tEbkh7z0" allowfullscreen></iframe>
+
+</div>
+
+</div>
+
+<script>
+function openAIShowcase(){
+document.getElementById("aiShowcase").classList.add("active");
+document.body.style.overflow="hidden";
+}
+
+function closeAIShowcase(){
+document.getElementById("aiShowcase").classList.remove("active");
+document.body.style.overflow="auto";
+}
+</script>
+
+<!-- AI PRODUCTS SHOWCASE END -->
 <!-- VIDEO SHOWCASE END -->
 
 </body>
