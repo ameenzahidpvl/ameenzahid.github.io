@@ -223,6 +223,41 @@ section{padding:65px 7%}
 .showcase h2{font-size:38px}
 .showcase{padding:75px 6%}
 }
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.95);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:100000;
+opacity:0;
+visibility:hidden;
+transition:.4s;
+}
+
+.lightbox.active{
+opacity:1;
+visibility:visible;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:20px;
+}
+
+.lightbox-close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:50px;
+cursor:pointer;
+color:white;
+}
 </style>
 </head>
 
@@ -432,6 +467,12 @@ document.getElementById("graphicShowcase").classList.remove("active");
 document.body.style.overflow="auto";
 }
 </script>
+<div id="lightbox" class="lightbox">
 
+<span class="lightbox-close" onclick="closeLightbox()">×</span>
+
+<img id="lightbox-img" src="">
+
+</div>
 </body>
 </html>
