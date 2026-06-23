@@ -20,6 +20,7 @@ backdrop-filter:blur(18px);
 z-index:999;
 border-bottom:1px solid rgba(255,255,255,.08);
 }
+
 .logo{font-weight:900}
 nav ul{display:flex;gap:28px;list-style:none}
 nav a{font-weight:bold;color:#ccc}
@@ -31,12 +32,14 @@ display:flex;flex-direction:column;justify-content:center;align-items:center;
 text-align:center;padding:120px 8% 70px;
 background:radial-gradient(circle at top,#22223f,#050509 60%);
 }
+
 .profile{
 width:180px;height:180px;border-radius:50%;
 object-fit:cover;border:4px solid white;
 box-shadow:0 30px 70px rgba(0,0,0,.6);
 margin-bottom:28px;
 }
+
 .hero h1{font-size:76px;line-height:1.1}
 .hero h2{font-size:25px;color:#cfcfcf;margin:18px 0}
 .hero p{max-width:780px;color:#ddd;font-size:18px}
@@ -47,7 +50,6 @@ padding:14px 28px;border-radius:50px;
 font-weight:900;background:white;color:black;
 }
 .btn.dark{background:#171722;color:white;border:1px solid #333}
-.btn.green{background:#25D366;color:white}
 
 section{padding:90px 8%}
 .section-title{font-size:48px;margin-bottom:22px}
@@ -58,6 +60,7 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
+
 .card{
 background:rgba(255,255,255,.06);
 border:1px solid rgba(255,255,255,.12);
@@ -66,10 +69,24 @@ padding:30px;
 transition:.3s;
 backdrop-filter:blur(14px);
 }
-.card:hover{transform:translateY(-8px);background:rgba(255,255,255,.09)}
-.card img{width:100%;border-radius:18px;margin-bottom:18px}
+
+.card:hover{
+transform:translateY(-8px);
+background:rgba(255,255,255,.09);
+}
+
+.card img{
+width:100%;
+border-radius:18px;
+margin-bottom:18px;
+}
+
 .card h3{font-size:25px;margin-bottom:10px}
 .card p{color:#bbb}
+
+.portfolio-click{
+cursor:pointer;
+}
 
 .stats h3{font-size:46px;color:#25D366}
 
@@ -85,11 +102,13 @@ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
 margin-top:40px;
 }
+
 .brands-logos img{
 width:100%;height:135px;object-fit:contain;
 background:white;padding:22px;border-radius:22px;
 transition:.3s;
 }
+
 .brands-logos img:hover{transform:translateY(-8px)}
 
 .contact-box{
@@ -97,6 +116,7 @@ max-width:800px;background:#15151f;
 border:1px solid #29293a;border-radius:25px;
 padding:35px;
 }
+
 .contact-box p{margin-bottom:12px;color:#ccc}
 
 .whatsapp{
@@ -111,6 +131,86 @@ text-align:center;padding:35px;
 border-top:1px solid #222;color:#888;
 }
 
+/* SHOWCASE POPUP */
+
+.showcase{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(5,5,9,.97);
+backdrop-filter:blur(25px);
+z-index:99999;
+overflow-y:auto;
+padding:85px 8%;
+opacity:0;
+visibility:hidden;
+transform:scale(.95);
+transition:.5s ease;
+}
+
+.showcase.active{
+opacity:1;
+visibility:visible;
+transform:scale(1);
+}
+
+.close-showcase{
+position:fixed;
+top:20px;
+right:30px;
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:white;
+color:black;
+font-size:35px;
+cursor:pointer;
+font-weight:bold;
+z-index:100000;
+}
+
+.showcase h2{
+font-size:55px;
+margin-bottom:10px;
+}
+
+.showcase p{
+color:#aaa;
+margin-bottom:40px;
+max-width:800px;
+}
+
+.masonry-gallery{
+columns:4 260px;
+column-gap:20px;
+}
+
+.masonry-gallery img{
+width:100%;
+margin-bottom:20px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.1);
+transition:.4s;
+opacity:0;
+transform:translateY(60px);
+animation:showImg .8s forwards;
+}
+
+.masonry-gallery img:hover{
+transform:scale(1.03);
+box-shadow:0 20px 60px rgba(255,255,255,.15);
+}
+
+@keyframes showImg{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
 @media(max-width:700px){
 nav{flex-direction:column;gap:12px}
 nav ul{gap:15px;font-size:14px}
@@ -119,6 +219,9 @@ nav ul{gap:15px;font-size:14px}
 .profile{width:145px;height:145px}
 .section-title{font-size:34px}
 section{padding:65px 7%}
+.masonry-gallery{columns:2}
+.showcase h2{font-size:38px}
+.showcase{padding:75px 6%}
 }
 </style>
 </head>
@@ -136,7 +239,7 @@ section{padding:65px 7%}
 </nav>
 
 <header class="hero">
-<img src="file%20copy.jpg" class="profile" alt="Ameen Zahid">
+<img src="file copy.jpg" class="profile" alt="Ameen Zahid">
 
 <h1>Ameen Zahid</h1>
 <h2>Graphic Designer • Video Editor • AI Content Creator</h2>
@@ -218,7 +321,7 @@ visual communication through graphic design, video production, product photograp
 
 <div class="grid">
 
-<div class="card">
+<div class="card portfolio-click" onclick="openShowcase()">
 <img src="posterss.jpg" alt="Graphic Design Work">
 <h3>Graphic Design</h3>
 <p>Social media posts, posters, banners, product ads and e-commerce creatives.</p>
@@ -245,6 +348,7 @@ visual communication through graphic design, video production, product photograp
 <section>
 <h2 class="section-title">Experience</h2>
 <div class="grid">
+
 <div class="card">
 <h3>Toby's Professional</h3>
 <p>Multimedia Designer — Dubai, UAE</p>
@@ -259,6 +363,7 @@ visual communication through graphic design, video production, product photograp
 <h3>Akkara Foundation</h3>
 <p>Videographer & Graphic Designer — India</p>
 </div>
+
 </div>
 </section>
 
@@ -280,6 +385,48 @@ visual communication through graphic design, video production, product photograp
 <footer>
 <p>Designed & Developed by Ameen Zahid</p>
 </footer>
+
+<!-- GRAPHIC DESIGN SHOWCASE -->
+
+<div id="graphicShowcase" class="showcase">
+
+<button class="close-showcase" onclick="closeShowcase()">×</button>
+
+<h2>Graphic Design Portfolio</h2>
+
+<p>
+Collection of social media posts, advertisements,
+product promotions, banners and branding projects.
+</p>
+
+<div class="masonry-gallery">
+<img src="designs/1.jpg" alt="Graphic Design Work">
+<img src="designs/2.jpg" alt="Graphic Design Work">
+<img src="designs/3.jpg" alt="Graphic Design Work">
+<img src="designs/4.jpg" alt="Graphic Design Work">
+<img src="designs/5.jpg" alt="Graphic Design Work">
+<img src="designs/6.jpg" alt="Graphic Design Work">
+<img src="designs/7.jpg" alt="Graphic Design Work">
+<img src="designs/8.jpg" alt="Graphic Design Work">
+<img src="designs/9.jpg" alt="Graphic Design Work">
+<img src="designs/10.jpg" alt="Graphic Design Work">
+<img src="designs/11.jpg" alt="Graphic Design Work">
+<img src="designs/12.jpg" alt="Graphic Design Work">
+</div>
+
+</div>
+
+<script>
+function openShowcase(){
+document.getElementById("graphicShowcase").classList.add("active");
+document.body.style.overflow="hidden";
+}
+
+function closeShowcase(){
+document.getElementById("graphicShowcase").classList.remove("active");
+document.body.style.overflow="auto";
+}
+</script>
 
 </body>
 </html>
