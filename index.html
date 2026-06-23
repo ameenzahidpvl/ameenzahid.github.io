@@ -362,7 +362,7 @@ visual communication through graphic design, video production, product photograp
 <p>Social media posts, posters, banners, product ads and e-commerce creatives.</p>
 </div>
 
-<div class="card">
+<div class="card portfolio-click" onclick="openVideoShowcase()">
 <h3>Video Editing</h3>
 <p>Commercial videos, reels, product videos, corporate edits and motion graphics.</p>
 </div>
@@ -473,6 +473,56 @@ document.body.style.overflow="auto";
 
 <img id="lightbox-img" src="">
 
+</div>  <!-- lightbox ends -->
+
+<!-- VIDEO SHOWCASE START -->
+
+<div id="videoShowcase" class="showcase">
+
+<button class="close-showcase" onclick="closeVideoShowcase()">×</button>
+
+<h2>Video Editing Portfolio</h2>
+
+<p>
+Commercial videos, product advertisements, reels, AI commercials and cinematic edits.
+</p>
+
+<div class="video-gallery">
+
+<iframe src="https://www.youtube.com/embed/kIIHnQ8VGO8" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/iYWldS1a6L4" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/cTXu3_qSfmU" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/x004DJWg3Ws" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/WKqK14u6y4A" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/paRPrbsEQu8" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/PfM591a5KvI" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/cxOEhIMMkUw" allowfullscreen></iframe>
+
 </div>
+
+</div>
+
+<script>
+function openVideoShowcase(){
+document.getElementById("videoShowcase").classList.add("active");
+document.body.style.overflow="hidden";
+}
+
+function closeVideoShowcase(){
+document.getElementById("videoShowcase").classList.remove("active");
+document.body.style.overflow="auto";
+}
+</script>
+
+<!-- VIDEO SHOWCASE END -->
+
 </body>
 </html>
+
