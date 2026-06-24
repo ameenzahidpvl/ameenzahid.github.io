@@ -346,6 +346,24 @@ font-size:50px;
 cursor:pointer;
 color:white;
 }
+  #achievements .card{
+opacity:0;
+transform:translateY(50px);
+transition:.8s ease;
+}
+
+#achievements.show .card{
+opacity:1;
+transform:translateY(0);
+}
+
+#achievements .card img{
+width:100%;
+height:320px;
+object-fit:cover;
+border-radius:18px;
+margin-bottom:15px;
+}
 </style>
 </head>
 
@@ -357,6 +375,7 @@ color:white;
 <li><a href="#about">About</a></li>
 <li><a href="#portfolio">Portfolio</a></li>
 <li><a href="#brands">Brands</a></li>
+<li><a href="#achievements">Achievements</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -489,7 +508,51 @@ visual communication through graphic design, video production, product photograp
 </div>
 
 </div>
+</div>
+
 </section>
+
+<!-- ACHIEVEMENTS START -->
+
+<section id="achievements">
+
+<h2 class="section-title">🏆 Awards & Achievements</h2>
+
+<p class="sub">
+Recognitions, certifications, exhibitions, and professional milestones throughout my creative journey.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<img src="award1.jpg" alt="">
+<h3>Automechanika India 2026</h3>
+<p>Industry Participation</p>
+</div>
+
+<div class="card">
+<img src="award2.jpg" alt="">
+<h3>Graphic Design Certification</h3>
+<p>Professional Certification</p>
+</div>
+
+<div class="card">
+<img src="award3.jpg" alt="">
+<h3>Creative Excellence</h3>
+<p>Recognition & Achievement</p>
+</div>
+
+<div class="card">
+<img src="award4.jpg" alt="">
+<h3>Professional Milestone</h3>
+<p>Career Achievement</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ACHIEVEMENTS END -->
 
 <section class="cta-section">
 
@@ -706,7 +769,64 @@ document.body.style.overflow="auto";
 
 <!-- AI PRODUCTS SHOWCASE END -->
 <!-- VIDEO SHOWCASE END -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script>
+function celebrateAchievement(){
 
+confetti({
+particleCount:150,
+spread:120,
+origin:{y:0.6}
+});
+
+setTimeout(()=>{
+confetti({
+particleCount:100,
+angle:60,
+spread:80,
+origin:{x:0}
+});
+},300);
+
+setTimeout(()=>{
+confetti({
+particleCount:100,
+angle:120,
+spread:80,
+origin:{x:1}
+});
+},300);
+
+}
+</script>
+  <script>
+const achievementSection =
+document.querySelector('#achievements');
+
+if(achievementSection){
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+  
+if(entry.isIntersecting){
+
+achievementSection.classList.add('show');
+
+celebrateAchievement();
+
+observer.disconnect();
+
+}
+});
+
+},{threshold:0.4});
+
+observer.observe(achievementSection);
+
+}
+</script>
+  
 </body>
 </html>
 
